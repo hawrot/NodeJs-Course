@@ -1,15 +1,19 @@
-const http = require('http');
+//const http = require('http');
 const express =require('express');
 const bodyParser = require('body-parser');
-const adminRouters = require('./routes/admin');
-const shopRouters = require('./routes/shop');
 const app = express();
 
-app.use(adminRouters);
-app.use(shopRouters);
+const adminRouters = require('./routes/admin');
+const shopRouters = require('./routes/shop');
+
 app.use(bodyParser.urlencoded());
 
+app.use('/admin', adminRouters);
+app.use('/admin', shopRouters);
 
+app.use((req,res,next)=>{
+    res.status(404).send('<h1>Not found</h1>');
+});
 
 
 
