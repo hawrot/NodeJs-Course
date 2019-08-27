@@ -16,5 +16,5 @@ router.get('/checkout', shopController.getCheckout);
 router.get('/orders', shopController.getOrders);
 router.get('/products/:productId', shopController.getProduct);   //:productId says to express that the value will be passed
 
-
+router.post('/cart', shopController.postCart);
 module.exports = router;
