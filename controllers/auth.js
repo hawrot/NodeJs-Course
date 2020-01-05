@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
@@ -6,7 +7,7 @@ const User = require('../models/user');
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth: {
-        api_key: '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'
+        api_key: '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'
     }
 }));
 
@@ -128,3 +129,63 @@ exports.getReset = (req, res, next) =>{
        errorMessage: message
    });
 };
+
+exports.postReset = (req, res, next) =>{
+crypto.randomBytes(32, (err, buffer) =>{
+    if(err){
+        console.log(err);
+        return res.redirect('/reset');
+    }
+    const token = buffer.toString('hex');
+    User.findOne({email:req.body.emaill})
+        .then(user =>{
+            if(!user){
+                req.flash('error', 'No account with this email');
+                return res.redirect('/reset');
+            }
+            user.resetToken = token;
+            user.resetTokenExpiration = Date.now() + 3600000;
+            user.save();
+        })
+        .then(result =>{
+            res.redirect('/');
+            transporter.sendMail({
+                to: req.body,email,
+                from: 'shop@node.com',
+                subject: 'Password reset',
+                html: `
+                <p>You reqeuested password reset</p>
+                <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> link to reset the password </p>
+                `
+            })
+        })
+        .catch(err =>{
+        console.log(err);
+    });
+})
+};
+
+exports.getNewPassword = (req, es, next) =>{
+    const token = req.params.token;
+    User.find({resetToken: token, resetTokenExpiration: {$gt: Date.now()}})
+        .then(user =>{
+            let message = req.flash('error');
+            if(message.length > 0){
+                message = message[0];
+            }else {
+                message = null;
+            }
+            res.render('auth/new-password', {
+                path: '/new-password',
+                pageTitle: 'New Password',
+                errorMessage: message,
+                userId: user._id.toString()
+            });
+        })
+        .catch(err =>{
+            console.log(err);
+        });
+
+};
+
+
