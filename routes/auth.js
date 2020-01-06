@@ -3,6 +3,8 @@ const { check, body  } = require('express-validator/check');
 
 const authController = require('../controllers/auth');
 
+const User = require('../models/user');
+
 const router = express.Router();
 
 router.get('/login', authController.getLogin);
@@ -17,11 +19,18 @@ router.post('/signup',
         .isEmail()
         .withMessage('Enter a valid email')
         .custom((value, {req}) =>{
-             if(value === 'test@test.com'){
-                throw new Error('This email is not allowed')
-              }
-             return true;
-        }),
+             // if(value === 'test@test.com'){
+             //    throw new Error('This email is not allowed')
+             //  }
+             // return true;
+           return  User.findOne({ email: email })
+                .then(userDoc => {
+                    if (userDoc) {
+                        return Promise.reject('Email exists in the database');
+
+                }
+        });
+}),
     body('password', 'Please enter a password which is between 5 and 10 and contains numbers')
         .isLength({min: 5, max: 10})
         .isAlphanumeric(),
