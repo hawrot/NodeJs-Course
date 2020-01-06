@@ -24,7 +24,13 @@ router.post('/signup',
         }),
     body('password', 'Please enter a password which is between 5 and 10 and contains numbers')
         .isLength({min: 5, max: 10})
-        .isAlphanumeric()
+        .isAlphanumeric(),
+    body('confirmPassword').custom((value, {req}) =>{
+        if (value !== req.body.password){
+            throw new Error('Passwords need to match!');
+        }
+        return true;
+    })
 
     ],
         authController.postSignup);
