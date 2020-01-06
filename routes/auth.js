@@ -11,35 +11,49 @@ router.get('/login', authController.getLogin);
 
 router.get('/signup', authController.getSignup);
 
-router.post('/login', authController.postLogin);
+router.post('/login',
+
+    [
+        body('email')
+            .isEmail()
+            .withMessage('Please enter a valid email address.'),
+        body('password', 'Password has to be valid.')
+            .isLength({ min: 5 })
+            .isAlphanumeric()
+
+    ]
+    , authController.postLogin);
 
 router.post('/signup',
     [
-    check('email')
-        .isEmail()
-        .withMessage('Enter a valid email')
-        .custom((value, {req}) =>{
-             // if(value === 'test@test.com'){
-             //    throw new Error('This email is not allowed')
-             //  }
-             // return true;
-           return  User.findOne({ email: email })
-                .then(userDoc => {
+        check('email')
+            .isEmail()
+            .withMessage('Please enter a valid email.')
+            .custom((value, { req }) => {
+                // if (value === 'test@test.com') {
+                //   throw new Error('This email address if forbidden.');
+                // }
+                // return true;
+                return User.findOne({ email: value }).then(userDoc => {
                     if (userDoc) {
-                        return Promise.reject('Email exists in the database');
-
-                }
-        });
-}),
-    body('password', 'Please enter a password which is between 5 and 10 and contains numbers')
-        .isLength({min: 5, max: 10})
-        .isAlphanumeric(),
-    body('confirmPassword').custom((value, {req}) =>{
-        if (value !== req.body.password){
-            throw new Error('Passwords need to match!');
-        }
-        return true;
-    })
+                        return Promise.reject(
+                            'E-Mail exists already, please pick a different one.'
+                        );
+                    }
+                });
+            }),
+        body(
+            'password',
+            'Please enter a password with only numbers and text and at least 5 characters.'
+        )
+            .isLength({ min: 5 })
+            .isAlphanumeric(),
+        body('confirmPassword').custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('Passwords have to match!');
+            }
+            return true;
+        })
 
     ],
         authController.postSignup);
