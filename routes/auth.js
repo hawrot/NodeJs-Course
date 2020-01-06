@@ -11,7 +11,11 @@ router.get('/signup', authController.getSignup);
 
 router.post('/login', authController.postLogin);
 
-router.post('/signup',check('email').isEmail().withMessage('Enter a valid email'), authController.postSignup);
+router.post('/signup',check('email').isEmail().withMessage('Enter a valid email').custom((value, {req}) =>{
+    if(value === 'test@test.com'){
+        throw new Error('This email is not allowed')
+    }
+}), authController.postSignup);
 
 router.post('/logout', authController.postLogout);
 
