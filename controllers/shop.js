@@ -168,9 +168,17 @@ exports.getOrders = (req, res, next) => {
       res.setHeader('Content-Disposition','inline; filename="' + invoiceName +   '"');
       pdfDoc.pipe(fs.createWriteStream(invoicePath));
       pdfDoc.pipe(res);
-
-      pdfDoc.text('Hello here!');
-
+      pdfDoc.fontSize(26).text('Invoice', {
+        underline: true
+      });
+      pdfDoc.text('-------------');
+      let totalPrice = 0;
+      order.products.forEach(prod =>{
+        totalPrice = totalPrice + prod.quantity * prod.product.price;
+        pdfDoc.fontSize(14).text(prod.product.title + ' - ' + prod.quantity + ' x ' + '£' + prod.product.price);
+      });
+      pdfDoc.text('-------');
+      pdfDoc.fontSize(18).text('Total Price: £' + totalPrice);
       pdfDoc.end();
       /*fs.readFile(invoicePath, (err, data)=>{
         if(err){
