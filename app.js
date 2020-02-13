@@ -8,6 +8,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const multer = require('multer');
+const helmet = require('hemlet');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
@@ -89,6 +90,7 @@ app.use((req, res, next) => {
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
+app.use(helmet());
 
 app.get('/500', errorController.get500);
 app.use(errorController.get404);
