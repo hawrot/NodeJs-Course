@@ -4,7 +4,6 @@
     <list default="true" id="87cc22ee-645b-4563-b161-1481071a19bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/add-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/add-middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/start.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581951377983</updated>
-      <workItem from="1581951379415" duration="2614000" />
+      <workItem from="1581951379415" duration="2882000" />
     </task>
     <task id="LOCAL-00001" summary="Add mocha and chai">
       <created>1581951724632</created>
@@ -73,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581953368651</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Organise test by grouping them">
+      <created>1581964638164</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581964638164</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,13 +89,14 @@
     <MESSAGE value="Add mocha and chai" />
     <MESSAGE value="Write first test" />
     <MESSAGE value="Add first test for auth middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add first test for auth middleware" />
+    <MESSAGE value="Organise test by grouping them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organise test by grouping them" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581953368404">
+    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581964637825">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
-    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581953368404" />
+    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581964637825" />
     <state x="2480" y="831" key="Vcs.Push.Dialog.v2" timestamp="1581951589212">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>

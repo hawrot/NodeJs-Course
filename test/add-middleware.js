@@ -22,5 +22,14 @@ describe('Auth middleware', function () {
 
         expect(authMiddleware.bind(this, req, {}, ()=>{})).to.throw();
     });
+
+    it('should thrown an error if the token cannot be vierfied', function () {
+        const req = {
+            get: function () {
+                return 'Bearer xyz';
+            }
+        };
+        expect(authMiddleware.bind(this, req, {}, ()=>{})).to.throw();
+    })
 });
 
