@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87cc22ee-645b-4563-b161-1481071a19bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/auth-controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/feed-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/add-middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth-middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/feed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth-controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581951377983</updated>
-      <workItem from="1581951379415" duration="5302000" />
+      <workItem from="1581951379415" duration="7072000" />
     </task>
     <task id="LOCAL-00001" summary="Add mocha and chai">
       <created>1581951724632</created>
@@ -109,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581965880863</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Test login method">
+      <created>1581967992324</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1581967992324</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,13 +133,14 @@
     <MESSAGE value="Test the external packages" />
     <MESSAGE value="Add sinon package" />
     <MESSAGE value="Testing with stub and sinon package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing with stub and sinon package" />
+    <MESSAGE value="Test login method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test login method" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581965880618">
+    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581967992031">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
-    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581965880618" />
+    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581967992031" />
     <state x="2480" y="831" key="Vcs.Push.Dialog.v2" timestamp="1581951589212">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
