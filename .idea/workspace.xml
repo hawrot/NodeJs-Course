@@ -49,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581951377983</updated>
-      <workItem from="1581951379415" duration="3392000" />
+      <workItem from="1581951379415" duration="3839000" />
     </task>
     <task id="LOCAL-00001" summary="Add mocha and chai">
       <created>1581951724632</created>
@@ -86,7 +86,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581964920666</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Test the external packages">
+      <created>1581965466478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965466478</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add sinon package">
+      <created>1581965588843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965588843</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,13 +112,15 @@
     <MESSAGE value="Add first test for auth middleware" />
     <MESSAGE value="Organise test by grouping them" />
     <MESSAGE value="Test the token error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test the token error" />
+    <MESSAGE value="Test the external packages" />
+    <MESSAGE value="Add sinon package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add sinon package" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581965466252">
+    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581965588643">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
-    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581965466252" />
+    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581965588643" />
     <state x="2480" y="831" key="Vcs.Push.Dialog.v2" timestamp="1581951589212">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
