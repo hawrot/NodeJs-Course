@@ -1,5 +1,6 @@
 const authMiddleware = require('../middleware/is-auth');
 const expect = require('chai').expect;
+const jwt = require('jsonwebtoken');
 
 describe('Auth middleware', function () {
     it('should throw an error if no authorization header is present', function () {
@@ -30,6 +31,19 @@ describe('Auth middleware', function () {
             }
         };
         expect(authMiddleware.bind(this, req, {}, ()=>{})).to.throw();
+    });
+
+    it('should yield a userId after decoding the tocken', function () {
+        const req = {
+            get: function () {
+                return 'Bearer fdfdfdfdfdfd';
+            }
+        };
+        jwt.verify = function(){
+            return {userId : 'sbc' };
+        };
+        authMiddleware(req, {}, ()=>{} );
+        expect(req).to.have.property('userId');
     })
 });
 
