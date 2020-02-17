@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87cc22ee-645b-4563-b161-1481071a19bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/start.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +50,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581951377983</updated>
-      <workItem from="1581951379415" duration="276000" />
+      <workItem from="1581951379415" duration="1040000" />
     </task>
+    <task id="LOCAL-00001" summary="Add mocha and chai">
+      <created>1581951724632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581951724632</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add mocha and chai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add mocha and chai" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2465" y="692" key="CommitChangelistDialog2" timestamp="1581951724051">
+      <screen x="0" y="23" width="3840" height="2137" />
+    </state>
+    <state x="2465" y="692" key="CommitChangelistDialog2/0.23.3840.2137@0.23.3840.2137" timestamp="1581951724051" />
     <state x="2480" y="831" key="Vcs.Push.Dialog.v2" timestamp="1581951589212">
       <screen x="0" y="23" width="3840" height="2137" />
     </state>
